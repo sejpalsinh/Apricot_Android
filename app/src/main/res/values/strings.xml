@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Apricot</string>
+    <string name="settings">SETTINGS</string>
+    <string name="show_apricot">Show Apricot</string>
+    <string name="welcome_to_apricot">Welcome to Apricot</string>
+    <string name="todo">TODO</string>
+</resources>
