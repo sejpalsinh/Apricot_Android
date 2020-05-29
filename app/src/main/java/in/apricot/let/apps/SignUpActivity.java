@@ -10,11 +10,17 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class SignUpActivity extends AppCompatActivity {
 
 
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference("User");
+    String key;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +28,9 @@ public class SignUpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_up);
         preferences = getSharedPreferences("apricot", MODE_PRIVATE);
         editor = preferences.edit();
+        key = preferences.getString("product_key", " ");
+        myRef = myRef.child(key);
+
     }
 
     public void do_signup(View view) {
@@ -60,6 +69,8 @@ public class SignUpActivity extends AppCompatActivity {
 
     private void write_to_firebase(String uname,String pass) {
         //write this 2 string in db
+        myRef.child("username").setValue(uname);
+        myRef.child("password").setValue(pass);
     }
 
     public static boolean isValidEmail(String target) {
