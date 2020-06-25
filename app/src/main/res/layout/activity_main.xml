@@ -16,13 +16,13 @@
 
         <ImageView
             android:id="@+id/first_ico"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/_200sdp"
+            android:layout_width="371dp"
+            android:layout_height="218dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/_10sdp"
+            android:contentDescription="@string/todo"
             android:layerType="software"
-            android:src="@drawable/icons"
-            android:contentDescription="@string/todo" />
+            android:src="@drawable/icons" />
 
         <LinearLayout
             android:id="@+id/title_product"

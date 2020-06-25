@@ -17,8 +17,8 @@
 
         <ImageView
             android:id="@+id/first_ico"
-            android:layout_width="276dp"
-            android:layout_height="270dp"
+            android:layout_width="240dp"
+            android:layout_height="191dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/_10sdp"
             android:layerType="software"
