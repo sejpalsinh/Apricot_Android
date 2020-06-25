@@ -9,11 +9,12 @@
     tools:context=".SplashActivity">
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerInParent="true"
-        android:src="@drawable/splash"
-        android:layerType="software"/>
-
-
+        android:layout_marginStart="@dimen/_30sdp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_marginEnd="@dimen/_30sdp"
+        android:layout_marginBottom="@dimen/_30sdp"
+        app:srcCompat="@drawable/icons" />
 </RelativeLayout>

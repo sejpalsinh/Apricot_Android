@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type='text/javascript' src='scaledrone.min.js'></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="mystyle.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/fontawesome.min.css"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+</head>
+<body>
+      <video id="localVideo" autoplay muted hidden></video>
+      <video poster="myldr.gif" id="remoteVideo" autoplay></video>
+
+      <div class="barright" align="right" id="rightbar" hidden>
+        <div><i class="fa fa-chevron-up fa-2x" id="drop1"  onclick="drop1()"></i></div>
+          <div class="action-bar">
+              <div><i class="fas fa-volume-mute fa-2x f_mute" id="f_mute" onclick="f_mute()"></i></div>
+              <div class="icon-text f_mute" id="f_mute1" onclick="f_mute()" >MUTE</div>
+              <div><i class="fa  fa-microphone fa-2x" id="f_talk" onclick="f_talk()"></i></div>
+              <div class="icon-text" id="f_talk1" onclick="f_talk()">TALK</div>
+              <div><i class="fas fa-baby-carriage"  id="f_rock" onclick="f_rock()"></i></div>
+              <div class="icon-text"  id="f_rock1" onclick="f_rock()">ROCK</div>
+          </div>
+      </div>
+<td>
+      <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-analytics.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-database.js"></script>
+      <script src="script.js"></script>
+      <script src="myutil.js"></script>
+      
+</body>
+</html>

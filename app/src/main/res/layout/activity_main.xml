@@ -30,19 +30,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/first_ico"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_50sdp"
             android:gravity="center"
             android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="@dimen/_20sdp"
-                android:gravity="center"
-                android:text="@string/welcome_to_apricot"
-                android:textColor="#FFFFFF"
-                android:textSize="@dimen/_26sdp" />
 
             <Button
                 android:id="@+id/btn_showweb"
@@ -53,9 +43,9 @@
                 android:background="@drawable/roundstyle"
                 android:drawableStart="@drawable/video"
                 android:onClick="goto_webshow"
+                android:text="@string/show_apricot"
                 android:textColor="#FFFFFF"
-                android:textSize="24sp"
-                android:text="@string/show_apricot"/>
+                android:textSize="24sp" />
 
 
             <Button
@@ -66,12 +56,12 @@
                 android:layout_marginLeft="@dimen/_30sdp"
                 android:layout_marginTop="@dimen/_30sdp"
                 android:layout_marginRight="@dimen/_30sdp"
+                android:background="@drawable/roundstyle"
                 android:drawableStart="@drawable/settings"
                 android:onClick="goto_settings"
-                android:background="@drawable/roundstyle"
+                android:text="@string/settings"
                 android:textColor="#FFFFFF"
-                android:textSize="24sp"
-                android:text="@string/settings"/>
+                android:textSize="24sp" />
         </LinearLayout>
     </RelativeLayout>
 </androidx.core.widget.NestedScrollView>

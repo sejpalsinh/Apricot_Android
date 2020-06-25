@@ -1,0 +1,77 @@
+body {
+  background: #ffffff;
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+video {
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+
+/* Style for buttons of left side =================================================== */
+.sidebar {
+height: 100%;
+width: 100%;
+position: fixed;
+top: 0;
+right: 20px;
+color:white;
+}
+.sidebar i{
+  padding: 20px 20px 0px 0px;
+}
+.sidebar .l1{
+  align : right;
+  margin-top: 20px;
+  white-space: nowrap;
+}
+.sidebar .l2{
+  align : right;
+  margin-top: 37px;
+  white-space: nowrap;
+}
+
+/*========================================================================== */
+
+
+/* Style for buttons of right side =================================================== */
+
+.barright {
+height: 100%;
+text-align: center;
+position: fixed;
+top: 270px;
+right: 20px;
+color:white;
+}
+.barright i{
+  padding: 20px 20px 0px 20px;
+  font-size: 2em;
+}
+.barright .tag1{
+  padding-left: 10px;
+}
+.barright .tag2{
+  padding-left: 11px;
+}
+.barright .tag3{
+  padding-left: 13px;
+}
+.icon-text {
+  margin-top: 10px;
+}
+.rotate-90 {
+  transform: rotate(180deg);
+
+}
+.fa.fa-chevron-up.fa-2x {
+  transform-origin: center;
+  padding-top: 0;
+  transition: all 0.4s ease;
+}
