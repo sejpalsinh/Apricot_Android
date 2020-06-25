@@ -30,6 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/first_ico"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_20sdp"
             android:gravity="center"
             android:orientation="vertical">
 

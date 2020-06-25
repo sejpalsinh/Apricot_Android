@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -16,6 +17,8 @@ public class SettingsActivity extends AppCompatActivity {
     Intent mServiceIntent;
     private my_service mYourService;
     Switch sw_main,sw_noicy,sw_movement;
+    SharedPreferences preferences;
+    SharedPreferences.Editor editor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,12 +27,28 @@ public class SettingsActivity extends AppCompatActivity {
         sw_main = findViewById(R.id.swch_main);
         sw_noicy = findViewById(R.id.swch_noicy);
         sw_movement = findViewById(R.id.swch_moment);
+        preferences = getSharedPreferences("apricot", MODE_PRIVATE);
+        editor = preferences.edit();
+        if(preferences.getString("isNotify", "0").equals("1"))
+        {
+            sw_main.setChecked(true);
+        }
+        if(preferences.getString("isNotyMove", "1").equals("1"))
+        {
+            sw_movement.setChecked(true);
+        }
+        if(preferences.getString("isNotySound", "1").equals("1"))
+        {
+            sw_noicy.setChecked(true);
+        }
     }
 
     public void on_notification_click(View view) {
         if(sw_main.isChecked())
         {
-            Toast.makeText(this, "On", Toast.LENGTH_SHORT).show();
+            editor.putString("isNotify","1");
+            editor.commit();
+           // Toast.makeText(this, "On", Toast.LENGTH_SHORT).show();
             sw_movement.setEnabled(true);
             sw_noicy.setEnabled(true);
             mYourService = new my_service();
@@ -40,7 +59,11 @@ public class SettingsActivity extends AppCompatActivity {
         }
 
         else {
-            Toast.makeText(this, "off", Toast.LENGTH_SHORT).show();
+            editor.putString("isNotify","0");
+            editor.putString("isNotyMove","0");
+            editor.putString("isNotySound","0");
+            editor.commit();
+           // Toast.makeText(this, "off", Toast.LENGTH_SHORT).show();
             sw_movement.setChecked(false);
             sw_noicy.setChecked(false);
             sw_movement.setEnabled(false);
@@ -56,10 +79,14 @@ public class SettingsActivity extends AppCompatActivity {
     public void on_movemnt_swtch(View view) {
         if(sw_movement.isChecked())
         {
+            editor.putString("isNotyMove","1");
+            editor.commit();
             Myutil.isNotfiOnMovement = true;
         }
         else
         {
+            editor.putString("isNotyMove","0");
+            editor.commit();
             Myutil.isNotfiOnMovement = false;
         }
     }
@@ -67,10 +94,14 @@ public class SettingsActivity extends AppCompatActivity {
     public void on_noicey_swtch(View view) {
         if(sw_noicy.isChecked())
         {
+            editor.putString("isNotySound","1");
+            editor.commit();
             Myutil.isNotfiOnNoice = true;
         }
         else
         {
+            editor.putString("isNotySound","0");
+            editor.commit();
             Myutil.isNotfiOnNoice = false;
         }
     }

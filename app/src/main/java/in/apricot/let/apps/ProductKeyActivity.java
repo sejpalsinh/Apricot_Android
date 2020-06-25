@@ -2,8 +2,11 @@ package in.apricot.let.apps;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -15,6 +18,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
 
 public class ProductKeyActivity extends AppCompatActivity {
 
@@ -36,6 +40,11 @@ public class ProductKeyActivity extends AppCompatActivity {
     }
 
     public void Check_Product_key(View view) {
+        if(!isOnline())
+        {
+            Toast.makeText(getApplicationContext(),"Please Check Internet Connection.", Toast.LENGTH_SHORT).show();
+            return;
+        }
         String pro_key = product_key.getText().toString();
         is_Productkey(pro_key);
     }
@@ -80,6 +89,7 @@ public class ProductKeyActivity extends AppCompatActivity {
                 {
                     Log.d("service","nononono");
                     Toast.makeText(getApplicationContext(),"Product key is not valid please check it.", Toast.LENGTH_SHORT).show();
+                    return;
                 }
             }
             @Override
@@ -87,6 +97,11 @@ public class ProductKeyActivity extends AppCompatActivity {
                 Log.d("key check error ",databaseError.getDetails());
             }
         });
+    }
+    public boolean isOnline() {
+        ConnectivityManager cm =(ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo netInfo = cm.getActiveNetworkInfo();
+        return netInfo != null && netInfo.isConnectedOrConnecting();
     }
 
 }

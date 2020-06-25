@@ -15,12 +15,9 @@ public class LoginActivity extends AppCompatActivity {
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef = database.getReference("User");
-
-
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
     String sp_uname,sp_pass;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

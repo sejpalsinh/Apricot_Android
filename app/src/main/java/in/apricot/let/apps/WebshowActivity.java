@@ -4,6 +4,7 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -16,6 +17,9 @@ import android.webkit.WebViewClient;
 public class WebshowActivity extends AppCompatActivity {
 
     WebView webView;
+    SharedPreferences preferences;
+    SharedPreferences.Editor editor;
+    String device_code;
     private static final String TAG = MainActivity.class.getSimpleName();
     @SuppressLint({"JavascriptInterface", "SetJavaScriptEnabled"})
     @RequiresApi(api = Build.VERSION_CODES.M)
@@ -24,6 +28,9 @@ public class WebshowActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_webshow);
         webView = findViewById(R.id.web_view);
+        preferences = getSharedPreferences("apricot", MODE_PRIVATE);
+        editor = preferences.edit();
+        device_code = preferences.getString("product_key", " ");
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webSettings.setAllowFileAccessFromFileURLs(true);
@@ -78,7 +85,7 @@ public class WebshowActivity extends AppCompatActivity {
             }
         });
 
-        webView.loadUrl("file:///android_asset/index.html#0000011");
+        webView.loadUrl("file:///android_asset/index.html#"+device_code);
 
     }
 
