@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@color/white"
     android:overScrollMode="never">
 
     <RelativeLayout
-        android:focusable="false"
-        android:focusableInTouchMode="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:focusable="false"
+        android:focusableInTouchMode="true"
         tools:context=".SignUpActivity">
 
 
@@ -30,6 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/first_ico"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_50sdp"
             android:gravity="center"
             android:orientation="vertical">
 
@@ -40,13 +41,14 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginRight="@dimen/_30sdp"
                 android:layout_marginBottom="@dimen/_20sdp"
+                android:fontFamily="@font/gothic"
                 android:gravity="center"
-                android:text="Your Product has successfully been linked with your Email ID and password"
-                android:textColor="#FFFFFF"
-                android:textSize="@dimen/_18sdp"
-                android:textStyle="bold" />
+                android:text="Your Product has successfully been linked with your Email ID and password."
+                android:textColor="@color/forText"
+                android:textSize="@dimen/_18sdp" />
 
             <TextView
                 android:id="@+id/textView3"
@@ -56,25 +58,11 @@
                 android:layout_marginLeft="@dimen/_30sdp"
                 android:layout_marginRight="@dimen/_30sdp"
                 android:layout_marginBottom="@dimen/_20sdp"
+                android:fontFamily="@font/gothic"
                 android:gravity="center"
-                android:text=" Do not give this info out to anyone they can tap into your apricot with your credentials"
-                android:textColor="#FFFFFF"
-                android:textSize="@dimen/_18sdp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="@dimen/_30sdp"
-                android:layout_marginRight="@dimen/_30sdp"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:gravity="center"
-                android:text="Make your hotspot/wifi name to Apricot and password to apricot123"
-                android:textColor="#FFFFFF"
-                android:textSize="@dimen/_18sdp"
-                android:textStyle="bold" />
+                android:text=" Do not give this info out to anyone they can tap into your apricot with your credentials."
+                android:textColor="@color/forText"
+                android:textSize="@dimen/_18sdp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -85,7 +73,7 @@
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginEnd="@dimen/_40sdp"
                 android:layout_marginBottom="@dimen/_15sdp"
-                android:background="@drawable/blue_round"
+                android:background="@drawable/pink_round"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -96,7 +84,8 @@
                     android:layout_height="@dimen/_30sdp"
                     android:layout_gravity="center_vertical"
                     android:layout_marginEnd="@dimen/_5sdp"
-                    android:background="@drawable/blue_round"
+                    android:background="@drawable/pink_round"
+                    android:fontFamily="@font/gothic"
                     android:gravity="center"
                     android:onClick="go_to_mainscreen"
                     android:padding="@dimen/_3sdp"
@@ -109,8 +98,6 @@
             </LinearLayout>
 
         </LinearLayout>
-
-
 
 
     </RelativeLayout>

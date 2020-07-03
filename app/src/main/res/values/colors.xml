@@ -8,4 +8,5 @@
     <color name="black">#000000</color>
     <color name="setting_dark">#8A000000</color>
     <color name="setting_light">#1B000000</color>
+    <color name="forText">#6A8F8E</color>
 </resources>

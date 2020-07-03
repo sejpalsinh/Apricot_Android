@@ -64,7 +64,12 @@ public class my_service extends Service {
                 Log.d(TAG, "Value is: " + value);
                 if(value>2)
                 {
+                    Myutil.isSomeConnected = true;
                     notifyThis("Some one is connected");
+                }
+                else
+                {
+                    Myutil.isSomeConnected = false;
                 }
                 if(value==2 && Myutil.isNotfiOnMovement)
                 {

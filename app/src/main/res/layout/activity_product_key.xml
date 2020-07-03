@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@color/white"
     android:overScrollMode="never">
 
     <RelativeLayout
-        android:focusable="false"
-        android:focusableInTouchMode="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:focusable="false"
+        android:focusableInTouchMode="true"
         tools:context=".ProductKeyActivity">
 
 
@@ -38,16 +38,17 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:fontFamily="@font/avenir_next"
-                android:text="ENTER PRODUCT KEY"
-                android:textColor="@color/white"
+                android:background="#FFFFFF"
+                android:fontFamily="@font/gothic"
+                android:text="E N T E R   P R O D U C T   K E Y"
+                android:textColor="@color/forText"
                 android:textSize="@dimen/_14sdp" />
 
             <ImageView
                 android:layout_width="@dimen/_20sdp"
                 android:layout_height="@dimen/_20sdp"
                 android:layout_marginStart="@dimen/_12sdp"
-                android:background="@drawable/white_round"
+                android:background="@drawable/pink_round"
                 android:padding="@dimen/_3sdp"
                 android:src="@drawable/how_to_work"
                 android:tint="@color/black" />
@@ -64,7 +65,7 @@
             android:layout_marginTop="@dimen/_25sdp"
             android:layout_marginEnd="@dimen/_40sdp"
             android:layout_marginBottom="@dimen/_15sdp"
-            android:background="@drawable/white_round"
+            android:background="@drawable/pink_round"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -72,15 +73,18 @@
                 android:id="@+id/edt_product_key"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
+                android:layout_gravity="center|center_horizontal"
                 android:layout_marginStart="@dimen/_5sdp"
                 android:layout_weight="8"
                 android:background="@null"
-                android:fontFamily="sans-serif"
+                android:fontFamily="@font/gothic"
+                android:foregroundGravity="center"
+                android:gravity="center"
                 android:hint="Enter Key"
                 android:padding="@dimen/_10sdp"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_12sdp" />
+                android:textColor="@color/white"
+                android:textColorHint="#FFFFFF"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/btn_go"
@@ -88,13 +92,14 @@
                 android:layout_height="@dimen/_30sdp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginEnd="@dimen/_5sdp"
-                android:background="@drawable/blue_round"
+                android:background="@drawable/white_round"
+                android:fontFamily="@font/gothic"
                 android:gravity="center"
                 android:onClick="Check_Product_key"
                 android:padding="@dimen/_3sdp"
                 android:src="@drawable/how_to_work"
                 android:text="GO"
-                android:textColor="@color/white"
+                android:textColor="@color/forText"
                 android:tint="@color/black" />
 
         </LinearLayout>

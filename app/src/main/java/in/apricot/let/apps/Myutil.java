@@ -63,6 +63,7 @@ public class Myutil {
     }
     public static boolean isNotfiOnNoice =false;
     public static boolean isNotfiOnMovement =false;
+    public static boolean isSomeConnected =false;
 
     public static boolean hasPermissions(Context context, String... permissions) {
         if (context != null && permissions != null) {

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context=".SettingsActivity">
 
     <LinearLayout
@@ -11,14 +12,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_30sdp"
-        android:layout_marginTop="@dimen/_50sdp"
+        android:layout_marginTop="@dimen/_20sdp"
         android:layout_marginEnd="@dimen/_30sdp"
+        android:background="@drawable/settings_light"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/settings_light"
-        >
+        app:layout_constraintTop_toTopOf="parent">
 
         <Switch
             android:id="@+id/swch_main"
@@ -27,14 +27,15 @@
             android:layout_margin="@dimen/_10sdp"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginLeft="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_5sdp"
             android:layout_marginEnd="@dimen/_10sdp"
             android:layout_marginRight="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_10sdp"
             android:drawableStart="@drawable/notificationicon"
+            android:fontFamily="@font/gothic"
             android:onClick="on_notification_click"
             android:text="  Notifications"
-            android:textColor="#000000"
+            android:textColor="#FFFFFF"
             android:textSize="@dimen/_20sdp"
             android:textStyle="bold" />
     </LinearLayout>
@@ -44,7 +45,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_30sdp"
-        android:layout_marginTop="@dimen/_120sdp"
+        android:layout_marginTop="@dimen/_80sdp"
         android:layout_marginEnd="@dimen/_30sdp"
         android:background="@drawable/settings_dark"
         android:orientation="vertical"
@@ -92,51 +93,66 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_30sdp"
-        android:layout_marginTop="@dimen/_250sdp"
+        android:layout_marginTop="@dimen/_180sdp"
         android:layout_marginEnd="@dimen/_30sdp"
+        android:background="@drawable/settings_light"
+        android:fontFamily="@font/gothic"
+        android:onClick="goToInfo"
         android:orientation="vertical"
+        android:text="help"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/_15sdp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/settings_light"
-        android:text="help
-"
-        android:textColor="#000000"
-        android:textSize="@dimen/_15sdp"
-        android:textStyle="bold"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_logout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_30sdp"
-        android:layout_marginTop="@dimen/_300sdp"
+        android:layout_marginTop="@dimen/_230sdp"
         android:layout_marginEnd="@dimen/_30sdp"
+        android:background="@drawable/settings_light"
+        android:fontFamily="@font/gothic"
+        android:onClick="LogOut"
         android:orientation="vertical"
+        android:text="logout"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/_15sdp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/settings_light"
-        android:text="logout"
-        android:textColor="#000000"
-        android:textSize="@dimen/_15sdp"
-        android:textStyle="bold"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btn_abtus"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_30sdp"
-        android:layout_marginTop="@dimen/_350sdp"
+        android:layout_marginTop="@dimen/_280sdp"
         android:layout_marginEnd="@dimen/_30sdp"
+        android:background="@drawable/settings_light"
+        android:fontFamily="@font/gothic"
         android:orientation="vertical"
+        android:text="About us"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/_15sdp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/settings_light"
-        android:text="About us"
-        android:textColor="#000000"
-        android:textSize="@dimen/_15sdp"
-        android:textStyle="bold"/>
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="99dp"
+        android:layout_height="199dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_abtus"
+        app:srcCompat="@drawable/icons" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

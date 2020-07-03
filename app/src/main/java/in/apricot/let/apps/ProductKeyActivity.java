@@ -45,6 +45,7 @@ public class ProductKeyActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"Please Check Internet Connection.", Toast.LENGTH_SHORT).show();
             return;
         }
+        Toast.makeText(getApplicationContext(),"White Please", Toast.LENGTH_SHORT).show();
         String pro_key = product_key.getText().toString();
         is_Productkey(pro_key);
     }

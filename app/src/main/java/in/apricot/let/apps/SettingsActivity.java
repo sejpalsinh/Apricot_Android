@@ -33,11 +33,11 @@ public class SettingsActivity extends AppCompatActivity {
         {
             sw_main.setChecked(true);
         }
-        if(preferences.getString("isNotyMove", "1").equals("1"))
+        if(preferences.getString("isNotyMove", "0").equals("1"))
         {
             sw_movement.setChecked(true);
         }
-        if(preferences.getString("isNotySound", "1").equals("1"))
+        if(preferences.getString("isNotySound", "0").equals("1"))
         {
             sw_noicy.setChecked(true);
         }
@@ -115,5 +115,16 @@ public class SettingsActivity extends AppCompatActivity {
         }
         Log.i ("Service status", "Not running");
         return false;
+    }
+
+    public void LogOut(View view) {
+        editor.putString("islogin"," ");
+        editor.commit();
+        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+        finish();
+    }
+
+    public void goToInfo(View view) {
+        startActivity(new Intent(getApplicationContext(), InfoActivity.class));
     }
 }

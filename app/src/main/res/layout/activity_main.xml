@@ -3,14 +3,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@color/white"
     android:overScrollMode="never">
 
     <RelativeLayout
-        android:focusable="false"
-        android:focusableInTouchMode="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:focusable="false"
+        android:focusableInTouchMode="true"
         tools:context=".SignUpActivity">
 
 
@@ -42,6 +42,7 @@
                 android:layout_marginRight="@dimen/_30sdp"
                 android:background="@drawable/roundstyle"
                 android:drawableStart="@drawable/video"
+                android:fontFamily="@font/gothic"
                 android:onClick="goto_webshow"
                 android:text="@string/show_apricot"
                 android:textColor="#FFFFFF"
@@ -58,6 +59,7 @@
                 android:layout_marginRight="@dimen/_30sdp"
                 android:background="@drawable/roundstyle"
                 android:drawableStart="@drawable/settings"
+                android:fontFamily="@font/gothic"
                 android:onClick="goto_settings"
                 android:text="@string/settings"
                 android:textColor="#FFFFFF"

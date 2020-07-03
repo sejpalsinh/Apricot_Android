@@ -33,6 +33,11 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(),"Please Check Internet Connection.", Toast.LENGTH_SHORT).show();
             return;
         }
+        if(Myutil.isSomeConnected)
+        {
+            Toast.makeText(getApplicationContext(),"Some one is connected try after some time.", Toast.LENGTH_SHORT).show();
+            return;
+        }
         startActivity(new Intent(getApplicationContext(),WebshowActivity.class));
     }
 

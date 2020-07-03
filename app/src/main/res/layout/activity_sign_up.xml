@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@color/white"
     android:overScrollMode="never">
 
     <RelativeLayout
-        android:focusable="false"
-        android:focusableInTouchMode="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:focusable="false"
+        android:focusableInTouchMode="true"
         tools:context=".SignUpActivity">
 
 
@@ -38,10 +38,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:fontFamily="@font/avenir_next"
+                android:fontFamily="@font/gothic"
                 android:text="Create Account"
                 android:textAllCaps="true"
-                android:textColor="@color/white"
+                android:textColor="@color/forText"
                 android:textSize="@dimen/_14sdp" />
 
             <TextView
@@ -49,62 +49,68 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:fontFamily="@font/avenir_next"
+                android:fontFamily="@font/gothic"
                 android:text="Email Id"
-                android:textColor="@color/white"
+                android:textColor="@color/forText"
                 android:textSize="@dimen/_13sdp" />
 
             <EditText
                 android:id="@+id/edt_signup_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
+                android:layout_gravity="center|center_horizontal"
                 android:layout_marginStart="@dimen/_40sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginEnd="@dimen/_40sdp"
                 android:layout_weight="8"
-                android:background="@drawable/white_round"
-                android:fontFamily="@font/avenir_next"
+                android:background="@drawable/pink_round"
+                android:fontFamily="@font/gothic"
+                android:foregroundGravity="center"
+                android:gravity="center"
                 android:hint="Enter Email"
                 android:inputType="textEmailAddress"
                 android:padding="@dimen/_10sdp"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_12sdp" />
+                android:textColor="@color/white"
+                android:textColorHint="#FFFFFF"
+                android:textSize="18sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:fontFamily="@font/avenir_next"
+                android:fontFamily="@font/gothic"
                 android:text="Password"
-                android:textColor="@color/white"
+                android:textColor="@color/forText"
                 android:textSize="@dimen/_12sdp" />
 
             <EditText
                 android:id="@+id/edt_signup_pass"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
+                android:layout_gravity="center|center_horizontal"
                 android:layout_marginStart="@dimen/_40sdp"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_marginEnd="@dimen/_40sdp"
                 android:layout_weight="8"
-                android:background="@drawable/white_round"
-                android:fontFamily="@font/avenir_next"
+                android:background="@drawable/pink_round"
+                android:fontFamily="@font/gothic"
+                android:foregroundGravity="center"
+                android:gravity="center"
                 android:hint="Enter Password"
                 android:padding="@dimen/_10sdp"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_12sdp" />
+                android:textColor="@color/white"
+                android:textColorHint="#FFFFFF"
+                android:textSize="18sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:fontFamily="@font/avenir_next"
+                android:fontFamily="@font/gothic"
                 android:text="Re - enter Password"
-                android:textColor="@color/white"
+                android:textColor="@color/forText"
                 android:textSize="@dimen/_12sdp" />
 
         </LinearLayout>
@@ -119,7 +125,7 @@
             android:layout_marginTop="@dimen/_10sdp"
             android:layout_marginEnd="@dimen/_40sdp"
             android:layout_marginBottom="@dimen/_15sdp"
-            android:background="@drawable/white_round"
+            android:background="@drawable/pink_round"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -127,15 +133,18 @@
                 android:id="@+id/edt_signup_repass"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
+                android:layout_gravity="center|center_horizontal"
                 android:layout_marginStart="@dimen/_5sdp"
                 android:layout_weight="8"
                 android:background="@null"
-                android:fontFamily="@font/avenir_next"
+                android:fontFamily="@font/gothic"
+                android:foregroundGravity="center"
+                android:gravity="center"
                 android:hint="Enter Password"
                 android:padding="@dimen/_10sdp"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_12sdp" />
+                android:textColor="@color/white"
+                android:textColorHint="#FFFFFF"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/btn_signup_go"
@@ -143,13 +152,14 @@
                 android:layout_height="@dimen/_30sdp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginEnd="@dimen/_5sdp"
-                android:background="@drawable/blue_round"
+                android:background="@drawable/white_round"
+                android:fontFamily="@font/roboto_medium"
                 android:gravity="center"
                 android:onClick="do_signup"
                 android:padding="@dimen/_3sdp"
                 android:src="@drawable/how_to_work"
                 android:text="GO"
-                android:textColor="@color/white"
+                android:textColor="@color/forText"
                 android:tint="@color/black" />
 
         </LinearLayout>
