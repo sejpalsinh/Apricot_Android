@@ -84,9 +84,7 @@ public class WebshowActivity extends AppCompatActivity {
                 });
             }
         });
-
-        webView.loadUrl("file:///android_asset/index.html#"+device_code);
-
+        webView.loadUrl("https://img2imp.github.io/apricot/piside/#"+device_code);
     }
 
 
