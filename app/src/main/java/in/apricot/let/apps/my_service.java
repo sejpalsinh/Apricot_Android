@@ -30,7 +30,7 @@ import static androidx.constraintlayout.widget.Constraints.TAG;
 public class my_service extends Service {
 
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("User/000001/noty");
+    DatabaseReference myRef = database.getReference("User/"+Myutil.product_key_string+"/noty");
 
     public int counter=0;
     public my_service() {
@@ -54,7 +54,7 @@ public class my_service extends Service {
     {
 
         Log.d("service","go from MYFORGROUND");
-        startForeground(1, get_Notification_my("Apricot is connected"));
+        startForeground(1, get_Notification_my("Notification is On"));
 
         myRef.addValueEventListener(new ValueEventListener() {
             @RequiresApi(api = Build.VERSION_CODES.O)
@@ -81,7 +81,7 @@ public class my_service extends Service {
                 }
                 if(value==0)
                 {
-                    notifyThis("Apricot is connected");
+                    notifyThis("Notification is On");
                 }
             }
 

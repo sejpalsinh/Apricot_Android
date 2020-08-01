@@ -84,8 +84,24 @@ public class WebshowActivity extends AppCompatActivity {
                 });
             }
         });
-        webView.loadUrl("https://img2imp.github.io/apricot/piside/#"+device_code);
+        webView.loadUrl("https://img2imp.github.io/apricot/mobileside/#"+device_code);
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        webView.clearView();
+    }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        webView.clearView();
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        webView.clearView();
+    }
 }

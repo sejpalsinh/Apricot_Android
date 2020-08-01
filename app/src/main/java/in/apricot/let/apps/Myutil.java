@@ -49,21 +49,11 @@ public class Myutil {
             return true;
         }
     }
-    public static String getProductKey()
-    {
-        return "ok";
-    }
-    public static String getUname()
-    {
-        return "ok";
-    }
-    public static String getPassword()
-    {
-        return "ok";
-    }
+
     public static boolean isNotfiOnNoice =false;
     public static boolean isNotfiOnMovement =false;
     public static boolean isSomeConnected =false;
+    public static String product_key_string = "";
 
     public static boolean hasPermissions(Context context, String... permissions) {
         if (context != null && permissions != null) {
