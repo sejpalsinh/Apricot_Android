@@ -37,10 +37,10 @@ public class MainActivity extends AppCompatActivity {
         {
             System.out.println("thisthis : "+e);
         }
+        preferences = getSharedPreferences("apricot", MODE_PRIVATE);
         Myutil.product_key_string = preferences.getString("product_key", "0");
         myRef = database.getReference("User/"+Myutil.product_key_string+"/");
         myRef.child("noty").setValue(0);
-        preferences = getSharedPreferences("apricot", MODE_PRIVATE);
         editor = preferences.edit();
         if(preferences.getString("isNotify", "0").equals("1")) {
             my_service mYourService = new my_service();
