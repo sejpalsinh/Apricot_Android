@@ -29,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Myutil.isAllpremission(this);
         try {
             setContentView(R.layout.activity_main);
         }
@@ -37,12 +36,13 @@ public class MainActivity extends AppCompatActivity {
         {
             System.out.println("thisthis : "+e);
         }
+        Myutil.isAllpremission(this);
         preferences = getSharedPreferences("apricot", MODE_PRIVATE);
         Myutil.product_key_string = preferences.getString("product_key", "0");
         myRef = database.getReference("User/"+Myutil.product_key_string+"/");
         myRef.child("noty").setValue(0);
         editor = preferences.edit();
-        if(preferences.getString("isNotify", "0").equals("1")) {
+        if(preferences.getString("isNotyMove", "0").equals("1") || preferences.getString("isNotySound", "0").equals("1")) {
             my_service mYourService = new my_service();
             mServiceIntent = new Intent(this, mYourService.getClass());
             if (!isMyServiceRunning(mYourService.getClass())) {

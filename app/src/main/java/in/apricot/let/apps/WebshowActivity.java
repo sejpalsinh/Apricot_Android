@@ -87,21 +87,14 @@ public class WebshowActivity extends AppCompatActivity {
         webView.loadUrl("https://img2imp.github.io/apricot/mobileside/#"+device_code);
     }
 
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
-        webView.clearView();
-    }
+
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        webView.clearView();
+        System.out.println("distroid");
+        //webView.clearCache(true);
+        webView.destroy();
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        webView.clearView();
-    }
 }

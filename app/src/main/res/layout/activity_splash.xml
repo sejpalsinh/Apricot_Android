@@ -9,13 +9,14 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="243dp"
+        android:layout_height="560dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="@dimen/_40sdp"
+        android:layout_marginStart="@dimen/_82sdp"
         android:layout_marginLeft="@dimen/_40sdp"
         android:layout_marginTop="@dimen/_40sdp"
-        android:layout_marginEnd="@dimen/_40sdp"
+        android:layout_marginEnd="@dimen/_82sdp"
         android:layout_marginRight="@dimen/_40sdp"
         android:layout_marginBottom="@dimen/_40sdp"
         app:srcCompat="@drawable/icons" />

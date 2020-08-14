@@ -13,23 +13,13 @@
         android:background="#FFFFFF"
         android:focusable="false"
         android:focusableInTouchMode="true"
-        tools:context=".SignUpActivity">
+        tools:context=".Wifi_settingActivity">
 
-
-        <ImageView
-            android:id="@+id/first_ico"
-            android:layout_width="@dimen/_230sdp"
-            android:layout_height="@dimen/_230sdp"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/_10sdp"
-            android:layerType="software"
-            android:src="@drawable/icons" />
 
         <LinearLayout
             android:id="@+id/title_product"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/first_ico"
             android:layout_centerHorizontal="true"
             android:gravity="center"
             android:orientation="vertical">
@@ -41,8 +31,41 @@
                 android:layout_marginTop="@dimen/_20sdp"
                 android:layout_marginBottom="@dimen/_20sdp"
                 android:fontFamily="@font/gothic"
-                android:text="Login"
+                android:text="Internet Connection Settings"
                 android:textAllCaps="true"
+                android:textColor="@color/forText"
+                android:textSize="@dimen/_14sdp" />
+
+            <TextView
+                android:id="@+id/wifi_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|center_horizontal"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:fontFamily="@font/gothic"
+                android:foregroundGravity="center"
+                android:gravity="center"
+                android:text="Please enter your home network name and password to connect your apricot to the cloud  "
+                android:textAllCaps="false"
+                android:textColor="@color/forText"
+                android:textSize="@dimen/_14sdp" />
+
+            <TextView
+                android:id="@+id/wifi_info_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|center_horizontal"
+                android:layout_marginLeft="@dimen/_10sdp"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:fontFamily="@font/gothic"
+                android:foregroundGravity="center"
+                android:gravity="center"
+                android:text="In future if you will change your home network name and password you can update  from settings menu"
+                android:textAllCaps="false"
                 android:textColor="@color/forText"
                 android:textSize="@dimen/_14sdp" />
 
@@ -52,13 +75,13 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:fontFamily="@font/gothic"
-                android:text="Email Id"
+                android:text="Hotspot Name"
                 android:textColor="@color/forText"
                 android:textSize="@dimen/_13sdp" />
 
 
             <EditText
-                android:id="@+id/edt_login_email"
+                android:id="@+id/edt_hp_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|center_horizontal"
@@ -82,7 +105,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:fontFamily="@font/gothic"
-                android:text="Password"
+                android:text="Hotspot Password"
                 android:textColor="@color/forText"
                 android:textSize="@dimen/_12sdp" />
 
@@ -100,7 +123,7 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:id="@+id/edt_login_pass"
+                    android:id="@+id/edt_hp_pass"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|center_horizontal"
@@ -110,14 +133,14 @@
                     android:fontFamily="@font/gothic"
                     android:foregroundGravity="center"
                     android:gravity="center"
-                    android:hint="Password"
+                    android:hint="Hotspot Password"
                     android:padding="@dimen/_10sdp"
                     android:textColor="@color/black"
                     android:textColorHint="#00000000"
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/btn_login_go"
+                    android:id="@+id/btn_wifi_update"
                     android:layout_width="@dimen/_30sdp"
                     android:layout_height="@dimen/_30sdp"
                     android:layout_gravity="center_vertical"
@@ -125,7 +148,7 @@
                     android:background="@drawable/pink_round_btn"
                     android:fontFamily="@font/roboto_medium"
                     android:gravity="center"
-                    android:onClick="make_login"
+                    android:onClick="update_wifi"
                     android:padding="@dimen/_3sdp"
                     android:src="@drawable/how_to_work"
                     android:text="GO"
@@ -133,9 +156,20 @@
                     android:tint="@color/black" />
 
             </LinearLayout>
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="90dp"
+                android:layout_height="172dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginEnd="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:srcCompat="@drawable/icons" />
 
         </LinearLayout>
 
 
     </RelativeLayout>
 </androidx.core.widget.NestedScrollView>
+

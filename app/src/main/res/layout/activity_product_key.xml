@@ -48,7 +48,7 @@
                 android:layout_width="@dimen/_20sdp"
                 android:layout_height="@dimen/_20sdp"
                 android:layout_marginStart="@dimen/_12sdp"
-                android:background="@drawable/pink_round"
+                android:background="@drawable/pink_round_btn"
                 android:padding="@dimen/_3sdp"
                 android:src="@drawable/how_to_work"
                 android:tint="@color/black" />
@@ -82,7 +82,7 @@
                 android:gravity="center"
                 android:hint="Enter Key"
                 android:padding="@dimen/_10sdp"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textColorHint="#FFFFFF"
                 android:textSize="18sp" />
 
@@ -92,14 +92,14 @@
                 android:layout_height="@dimen/_30sdp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginEnd="@dimen/_5sdp"
-                android:background="@drawable/white_round"
+                android:background="@drawable/pink_round_btn"
                 android:fontFamily="@font/gothic"
                 android:gravity="center"
                 android:onClick="Check_Product_key"
                 android:padding="@dimen/_3sdp"
                 android:src="@drawable/how_to_work"
                 android:text="GO"
-                android:textColor="@color/forText"
+                android:textColor="@color/white"
                 android:tint="@color/black" />
 
         </LinearLayout>

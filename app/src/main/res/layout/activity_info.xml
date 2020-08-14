@@ -84,14 +84,13 @@
                     android:layout_height="@dimen/_30sdp"
                     android:layout_gravity="center_vertical"
                     android:layout_marginEnd="@dimen/_5sdp"
-                    android:background="@drawable/pink_round"
                     android:fontFamily="@font/gothic"
                     android:gravity="center"
                     android:onClick="go_to_mainscreen"
                     android:padding="@dimen/_3sdp"
                     android:src="@drawable/how_to_work"
                     android:text="LET'S   GO !"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="18sp"
                     android:tint="@color/black" />
 

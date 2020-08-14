@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -37,33 +38,27 @@
             <Button
                 android:id="@+id/btn_showweb"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/_100sdp"
+                android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/_30sdp"
                 android:layout_marginRight="@dimen/_30sdp"
-                android:background="@drawable/roundstyle"
-                android:drawableStart="@drawable/video"
+                android:background="@drawable/pink_round_btn"
                 android:fontFamily="@font/gothic"
                 android:onClick="goto_webshow"
-                android:text="@string/show_apricot"
+                android:text="Enter"
+                android:textAllCaps="false"
                 android:textColor="#FFFFFF"
                 android:textSize="24sp" />
 
-
-            <Button
-                android:id="@+id/goto_settings"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_100sdp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="@dimen/_30sdp"
-                android:layout_marginTop="@dimen/_30sdp"
-                android:layout_marginRight="@dimen/_30sdp"
-                android:background="@drawable/roundstyle"
-                android:drawableStart="@drawable/settings"
-                android:fontFamily="@font/gothic"
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_80sdp"
+                android:layout_marginTop="@dimen/_100sdp"
                 android:onClick="goto_settings"
-                android:text="@string/settings"
-                android:textColor="#FFFFFF"
-                android:textSize="24sp" />
+                app:srcCompat="@drawable/setting_btn" />
+
+
         </LinearLayout>
+
     </RelativeLayout>
 </androidx.core.widget.NestedScrollView>

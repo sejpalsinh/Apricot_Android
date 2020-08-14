@@ -70,7 +70,7 @@
                 android:hint="Enter Email"
                 android:inputType="textEmailAddress"
                 android:padding="@dimen/_10sdp"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textColorHint="#FFFFFF"
                 android:textSize="18sp" />
 
@@ -99,7 +99,7 @@
                 android:gravity="center"
                 android:hint="Enter Password"
                 android:padding="@dimen/_10sdp"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textColorHint="#FFFFFF"
                 android:textSize="18sp" />
 
@@ -142,7 +142,7 @@
                 android:gravity="center"
                 android:hint="Enter Password"
                 android:padding="@dimen/_10sdp"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textColorHint="#FFFFFF"
                 android:textSize="18sp" />
 
@@ -152,14 +152,14 @@
                 android:layout_height="@dimen/_30sdp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginEnd="@dimen/_5sdp"
-                android:background="@drawable/white_round"
+                android:background="@drawable/pink_round_btn"
                 android:fontFamily="@font/roboto_medium"
                 android:gravity="center"
                 android:onClick="do_signup"
                 android:padding="@dimen/_3sdp"
                 android:src="@drawable/how_to_work"
                 android:text="GO"
-                android:textColor="@color/forText"
+                android:textColor="@color/white"
                 android:tint="@color/black" />
 
         </LinearLayout>

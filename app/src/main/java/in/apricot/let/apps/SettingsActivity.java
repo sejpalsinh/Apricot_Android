@@ -24,15 +24,10 @@ public class SettingsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
-        sw_main = findViewById(R.id.swch_main);
         sw_noicy = findViewById(R.id.swch_noicy);
         sw_movement = findViewById(R.id.swch_moment);
         preferences = getSharedPreferences("apricot", MODE_PRIVATE);
         editor = preferences.edit();
-        if(preferences.getString("isNotify", "0").equals("1"))
-        {
-            sw_main.setChecked(true);
-        }
         if(preferences.getString("isNotyMove", "0").equals("1"))
         {
             sw_movement.setChecked(true);
@@ -43,48 +38,29 @@ public class SettingsActivity extends AppCompatActivity {
         }
     }
 
-    public void on_notification_click(View view) {
-        if(sw_main.isChecked())
+
+    public void on_movemnt_swtch(View view) {
+        if(sw_movement.isChecked())
         {
-            editor.putString("isNotify","1");
-            editor.commit();
-           // Toast.makeText(this, "On", Toast.LENGTH_SHORT).show();
-            sw_movement.setEnabled(true);
-            sw_noicy.setEnabled(true);
             mYourService = new my_service();
             mServiceIntent = new Intent(this, mYourService.getClass());
             if (!isMyServiceRunning(mYourService.getClass())) {
                 startService(mServiceIntent);
             }
-        }
-
-        else {
-            editor.putString("isNotify","0");
-            editor.putString("isNotyMove","0");
-            editor.putString("isNotySound","0");
-            editor.commit();
-           // Toast.makeText(this, "off", Toast.LENGTH_SHORT).show();
-            sw_movement.setChecked(false);
-            sw_noicy.setChecked(false);
-            sw_movement.setEnabled(false);
-            sw_noicy.setEnabled(false);
-            mYourService = new my_service();
-            mServiceIntent = new Intent(this, mYourService.getClass());
-            if (isMyServiceRunning(mYourService.getClass())) {
-                stopService(mServiceIntent);
-            }
-        }
-    }
-
-    public void on_movemnt_swtch(View view) {
-        if(sw_movement.isChecked())
-        {
             editor.putString("isNotyMove","1");
             editor.commit();
             Myutil.isNotfiOnMovement = true;
         }
         else
         {
+            if(!sw_noicy.isChecked())
+            {
+                mYourService = new my_service();
+                mServiceIntent = new Intent(this, mYourService.getClass());
+                if (isMyServiceRunning(mYourService.getClass())) {
+                    stopService(mServiceIntent);
+                }
+            }
             editor.putString("isNotyMove","0");
             editor.commit();
             Myutil.isNotfiOnMovement = false;
@@ -94,12 +70,25 @@ public class SettingsActivity extends AppCompatActivity {
     public void on_noicey_swtch(View view) {
         if(sw_noicy.isChecked())
         {
+            mYourService = new my_service();
+            mServiceIntent = new Intent(this, mYourService.getClass());
+            if (!isMyServiceRunning(mYourService.getClass())) {
+                startService(mServiceIntent);
+            }
             editor.putString("isNotySound","1");
             editor.commit();
             Myutil.isNotfiOnNoice = true;
         }
         else
         {
+            if(!sw_movement.isChecked())
+            {
+                mYourService = new my_service();
+                mServiceIntent = new Intent(this, mYourService.getClass());
+                if (isMyServiceRunning(mYourService.getClass())) {
+                    stopService(mServiceIntent);
+                }
+            }
             editor.putString("isNotySound","0");
             editor.commit();
             Myutil.isNotfiOnNoice = false;
@@ -120,11 +109,15 @@ public class SettingsActivity extends AppCompatActivity {
     public void LogOut(View view) {
         editor.putString("islogin"," ");
         editor.commit();
-        startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+        startActivity(new Intent(getApplicationContext(), ProductKeyActivity.class));
         finish();
     }
 
     public void goToInfo(View view) {
         startActivity(new Intent(getApplicationContext(), InfoActivity.class));
+    }
+
+    public void btn_wifisetting(View view) {
+        startActivity(new Intent(getApplicationContext(), Wifi_settingActivity.class));
     }
 }
