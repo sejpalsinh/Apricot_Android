@@ -31,6 +31,7 @@ public class Wifi_settingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_wifi_setting);
         edt_wifiname = findViewById(R.id.edt_hp_name);
         edt_wifipasswod = findViewById(R.id.edt_hp_pass);
+        mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
     }
 
     public void update_wifi(View view) {
