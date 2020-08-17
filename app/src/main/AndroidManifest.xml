@@ -29,7 +29,6 @@
         android:roundIcon="@drawable/icon_app"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Wifi_Info_Activity"></activity>
         <activity android:name=".Wifi_settingActivity" />
         <activity android:name=".SettingsActivity" />
 

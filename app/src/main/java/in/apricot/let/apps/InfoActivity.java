@@ -15,7 +15,7 @@ public class InfoActivity extends AppCompatActivity {
     }
 
     public void go_to_mainscreen(View view) {
-        startActivity(new Intent(getApplicationContext(),Wifi_Info_Activity.class));
+        startActivity(new Intent(getApplicationContext(),Wifi_settingActivity.class));
         finish();
     }
 }
