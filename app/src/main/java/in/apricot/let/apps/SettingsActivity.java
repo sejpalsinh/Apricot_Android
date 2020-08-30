@@ -2,6 +2,7 @@ package in.apricot.let.apps;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
@@ -12,14 +13,21 @@ import android.view.View;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
+
+import java.util.Objects;
+
 public class SettingsActivity extends AppCompatActivity {
 
-    Intent mServiceIntent;
-    private my_service mYourService;
-    Switch sw_main,sw_noicy,sw_movement;
+    Switch sw_noicy,sw_movement;
     SharedPreferences preferences;
     SharedPreferences.Editor editor;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef;
 
+    @SuppressLint("CommitPrefEdits")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +35,7 @@ public class SettingsActivity extends AppCompatActivity {
         sw_noicy = findViewById(R.id.swch_noicy);
         sw_movement = findViewById(R.id.swch_moment);
         preferences = getSharedPreferences("apricot", MODE_PRIVATE);
+        myRef = database.getReference("User/"+Myutil.product_key_string+"/");
         editor = preferences.edit();
         if(preferences.getString("isNotyMove", "0").equals("1"))
         {
@@ -42,10 +51,13 @@ public class SettingsActivity extends AppCompatActivity {
     public void on_movemnt_swtch(View view) {
         if(sw_movement.isChecked())
         {
-            mYourService = new my_service();
-            mServiceIntent = new Intent(this, mYourService.getClass());
-            if (!isMyServiceRunning(mYourService.getClass())) {
-                startService(mServiceIntent);
+            if(sw_noicy.isChecked())
+            {
+                myRef.child("device").child(Objects.requireNonNull(FirebaseInstanceId.getInstance().getToken())).setValue(3);
+            }
+            else
+            {
+                myRef.child("device").child(Objects.requireNonNull(FirebaseInstanceId.getInstance().getToken())).setValue(2);
             }
             editor.putString("isNotyMove","1");
             editor.commit();
@@ -53,13 +65,13 @@ public class SettingsActivity extends AppCompatActivity {
         }
         else
         {
-            if(!sw_noicy.isChecked())
+            if(sw_noicy.isChecked())
             {
-                mYourService = new my_service();
-                mServiceIntent = new Intent(this, mYourService.getClass());
-                if (isMyServiceRunning(mYourService.getClass())) {
-                    stopService(mServiceIntent);
-                }
+                myRef.child("device").child(Objects.requireNonNull(FirebaseInstanceId.getInstance().getToken())).setValue(1);
+            }
+            else
+            {
+                myRef.child("device").child(Objects.requireNonNull(FirebaseInstanceId.getInstance().getToken())).setValue(0);
             }
             editor.putString("isNotyMove","0");
             editor.commit();
@@ -70,10 +82,13 @@ public class SettingsActivity extends AppCompatActivity {
     public void on_noicey_swtch(View view) {
         if(sw_noicy.isChecked())
         {
-            mYourService = new my_service();
-            mServiceIntent = new Intent(this, mYourService.getClass());
-            if (!isMyServiceRunning(mYourService.getClass())) {
-                startService(mServiceIntent);
+            if(sw_movement.isChecked())
+            {
+                myRef.child("device").child(Objects.requireNonNull(FirebaseInstanceId.getInstance().getToken())).setValue(3);
+            }
+            else
+            {
+                myRef.child("device").child(Objects.requireNonNull(FirebaseInstanceId.getInstance().getToken())).setValue(1);
             }
             editor.putString("isNotySound","1");
             editor.commit();
@@ -81,13 +96,13 @@ public class SettingsActivity extends AppCompatActivity {
         }
         else
         {
-            if(!sw_movement.isChecked())
+            if(sw_movement.isChecked())
             {
-                mYourService = new my_service();
-                mServiceIntent = new Intent(this, mYourService.getClass());
-                if (isMyServiceRunning(mYourService.getClass())) {
-                    stopService(mServiceIntent);
-                }
+                myRef.child("device").child(Objects.requireNonNull(FirebaseInstanceId.getInstance().getToken())).setValue(2);
+            }
+            else
+            {
+                myRef.child("device").child(Objects.requireNonNull(FirebaseInstanceId.getInstance().getToken())).setValue(0);
             }
             editor.putString("isNotySound","0");
             editor.commit();

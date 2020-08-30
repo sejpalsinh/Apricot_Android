@@ -32,11 +32,6 @@
         <activity android:name=".Wifi_settingActivity" />
         <activity android:name=".SettingsActivity" />
 
-        <service
-            android:name=".my_service"
-            android:enabled="true"
-            android:exported="true" />
-
         <activity android:name=".WebshowActivity" />
         <activity android:name=".InfoActivity" />
         <activity android:name=".LoginActivity" />
